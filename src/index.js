@@ -69,8 +69,15 @@ export default pkgsMap => ({types: t}) => {
               return;
             }
 
-            spec = t.importDefaultSpecifier(t.identifier(localName));
-            importedPath = pkgMap[importedName] || currPkgName;
+            const [ pkgPath, moduleName ] = pkgMap[importedName];
+
+            if (moduleName) {
+              sepc = t.importSpecifier(t.identifier(localName), t.identifier(moduleName));
+            } else {
+              spec = t.importDefaultSpecifier(t.identifier(localName));
+            }
+
+            importedPath = pkgPath || currPkgName;
           }
 
           path.insertAfter(t.importDeclaration([spec], t.stringLiteral(importedPath)));
