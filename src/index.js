@@ -72,7 +72,7 @@ export default pkgsMap => ({types: t}) => {
             const [ pkgPath, moduleName ] = pkgMap[importedName];
 
             if (moduleName) {
-              sepc = t.importSpecifier(t.identifier(localName), t.identifier(moduleName));
+              spec = t.importSpecifier(t.identifier(localName), t.identifier(moduleName));
             } else {
               spec = t.importDefaultSpecifier(t.identifier(localName));
             }
