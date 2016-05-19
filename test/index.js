@@ -25,7 +25,7 @@ const pkgMap = indexFile.match(globalRegx)
   .reduce((result, [pkgId, path]) => {
     return {
       ...result,
-      [pkgId]: pkgName + path.slice(1),
+      [pkgId]: [pkgName + path.slice(1)],
     };
   }, {});
 
