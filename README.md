@@ -12,24 +12,6 @@ A babel cherry-pick plugin generator help you generate a babel plugin which can 
 $ npm i -D cherry-pick-babel-plugin-generator
 ```
 
-## Example
-
-take recharts as a example.
-
-from
-
-```
-import { Line, Pie, Treemap } from 'recharts';
-```
-
-to
-
-```
-import Treemap from 'recharts/chart/Treemap';
-import Pie from 'recharts/polar/Pie';
-import Line from 'recharts/cartesian/Line';
-```
-
 ## Usage
 
 ### babel-plugin-recharts
